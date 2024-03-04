@@ -1,8 +1,12 @@
 import { Typography } from "@mui/material";
 import ForumIcon from "@mui/icons-material/Forum";
 import router from "../../Routes";
+import { authenticatedVar } from "../../../constants/authenticated";
+import { useReactiveVar } from "@apollo/client";
 
 const MobileBranding = () => {
+  const authenticated = useReactiveVar(authenticatedVar);
+
   return (
     <>
       <ForumIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -10,7 +14,11 @@ const MobileBranding = () => {
         variant="h5"
         noWrap
         component="a"
-        onClick={() => router.navigate("/")}
+        onClick={
+          authenticated
+            ? () => router.navigate("/")
+            : () => router.navigate("/login")
+        }
         sx={{
           mr: 2,
           display: { xs: "flex", md: "none" },
