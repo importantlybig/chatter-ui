@@ -33,7 +33,7 @@ const App = () => {
         <Header />
         <Guard>
           {showChatList ? (
-            <Grid container>
+            <Grid container  sx={{ minHeight: "85vh" }}>
               <Grid item md={3}>
                 <ChatList />
               </Grid>
