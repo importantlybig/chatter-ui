@@ -50,7 +50,7 @@ const Chat = () => {
       <h1>{data?.chat.name}</h1>
       <Box sx={{ maxHeight: "70vh", overflow: "auto" }}>
         {messages?.messages.map((message) => (
-          <Grid container alignItems="center" marginBottom="1rem">
+          <Grid container alignItems="center" marginBottom="1rem" key={message._id}>
             <Grid item xs={2} lg={1}>
               <Avatar src="" sx={{ width: 52, height: 52 }} />
             </Grid>

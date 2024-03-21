@@ -40,6 +40,7 @@ const ChatList = () => {
           {data?.chats
             .map((chat) => (
               <ChatListItem
+                key={chat._id}
                 chat={chat}
                 selected={chat._id === selectedChatId}
               />
