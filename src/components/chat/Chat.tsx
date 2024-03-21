@@ -21,6 +21,7 @@ const Chat = () => {
   const [createMessage] = useCreateMessage();
   const { data: messages } = useGetMessages({ chatId });
 
+
   return (
     <Stack sx={{ height: "100%", justifyContent: "space-between" }}>
       <h1>{data?.chat.name}</h1>
